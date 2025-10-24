@@ -28,12 +28,12 @@ def Fibonacci_calculator(n):
 
 
 def user_input():
-    n = int(input("Enter a positive integer: "))
-    
+    n = 0
     while n <= 0:
-        n = int(input("Invalid input. Please enter a positive integer: "))
-    
-    return n
+        try:
+            n = int(input("please input a positive integer"))
+        except ValueError:
+            print("Invalid input. Please enter a positive integer.")
 
 if __name__ == "__main__":
     n = user_input()
