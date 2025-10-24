@@ -34,3 +34,8 @@ def user_input():
         n = int(input("Invalid input. Please enter a positive integer: "))
     
     return n
+
+if __name__ == "__main__":
+    n = user_input()
+    fibonacci_sequence = Fibonacci_calculator(n)
+    print_numbers(fibonacci_sequence)
