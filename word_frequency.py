@@ -24,3 +24,34 @@ def is_sentence(text):
         return False
 
     return True
+
+def get_sentence():
+    text = ""
+    while not is_sentence(text):
+        text = input("Enter a sentence: ").strip()
+    return text
+
+def word_frequency(text): 
+    words = text.lower().split()
+    
+    unique_words = []
+    word_frequency = []
+    
+    for word in words:
+        word = word.strip('.,!?')
+
+        if word in unique_words:
+            word_frequency[unique_words.index(word)] += 1
+        else: 
+            unique_words.append(word)
+            word_frequency.append(1)
+    return unique_words, word_frequency
+
+def printing(words, frequencies):
+    for word in words:
+        print(f"{word}   amount appeared: {frequencies[words.index(word)]}")
+
+if __name__ == "__main__":
+    text = get_sentence()
+    words, frequencies = word_frequency(text)
+    printing(words, frequencies)
