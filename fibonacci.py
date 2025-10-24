@@ -31,9 +31,10 @@ def user_input():
     n = 0
     while n <= 0:
         try:
-            n = int(input("please input a positive integer"))
+            n = int(input("please input a positive integer: "))
         except ValueError:
             print("Invalid input. Please enter a positive integer.")
+    return n
 
 if __name__ == "__main__":
     n = user_input()
